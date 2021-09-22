@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--cambie en por es-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Sprint 1 - Registro</title>
+    <script type="text/javascript">
+        function checkNombre() {
+            var validanombre = document.getElementById('nombre');
+            if (validanombre.value.length == 0) {
+                alert("false 1");
+                return false;
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{4,30}$/.test(validanombre.value)) {
+                alert("false 2");
+                return false;
+            } else {
+                alert("true");
+                return true;
+            }
+        }
+        module.exports = checkNombre;
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav id="navigation">
+            <a href="index.html">Home</a>
+            <a href="registro.html">Registro</a>
+        </nav>
+    </header>
+    <main id="container">
+        <!--cambie div por main "buenas practicas"-->
+        <div id="container-form">
+            <form id="form-registro">
+                <h1 id="registro">
+                    Registro
+                </h1>
+
+                <div class="item nombre">
+                    <label class="campo">Nombre</label>
+                    <input id="nombre" type="text" onblur="checkNombre()" />
+                </div>
+
+                <div class="item apellido">
+                    <label class="campo">Apellido</label>
+                    <input id="apellido" type="text" />
+                </div>
+
+                <div class="item telefono">
+                    <label class="campo">Telefono</label>
+                    <input id="telefono" type="tel" />
+                    <!--cambie el tipo "se exige en el documento del sprint"-->
+                </div>
+
+                <div class="item correo">
+                    <label class="campo">Correo</label>
+                    <input id="correo" type="email" />
+                    <!--cambie el tipo "se exige en el documento del sprint"-->
+                </div>
+
+                <div class="item pass">
+                    <label class="campo">Contraseña</label>
+                    <input type="password" id="password" /><br>
+                </div>
+
+                <div class="item boton">
+                    <button type="submit" id="btn-submit-form" value="Registrar">Registrarme</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <h3>
+            MINTIC-Ciclo 3: Desarrollo de software-202150-53349 <br>Grupo 2
+        </h3>
+    </footer>
+
+</body>
+
+</html>
